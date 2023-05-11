@@ -89,6 +89,7 @@ while (hasMoreItems):
         print(userId)
         logging.info(f"{userId} email changed")
 
-    #next page
+    #next page and hasMoreItem value to stop the loop
     bookmark = response.json()['PagingInfo']["Bookmark"] 
+    hasMoreItems = response.json()['PagingInfo']["HasMoreItems"]
     logging.info(f"Bookmark: {bookmark}")  
